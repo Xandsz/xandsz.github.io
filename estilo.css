@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #141414; /* Altera o fundo para preto */
+  background-image: url('seu_fundo_personalizado.jpg');
+  background-size: cover;
+  color: #FFFBD8; /* Altera a cor do texto */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #141414;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  color: #333;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+}
+
+#fala {
+  line-height: 1.5; /* Define o espaçamento entre as linhas */
+  letter-spacing: 1px; /* Define o espaçamento entre as letras */
+}
+
+.relo{
+  color: aquamarine;
+}
+#ss {
+  background-color: #212121;
+  border-radius: 10px;
+  padding: 10px; /* Adiciona um preenchimento interno ao redor do conteúdo */
+}
+
+#ss ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* Centraliza o texto */
+}
+
+#ss ul li {
+  display: inline-block;
+  margin: 0 10px; /* Espaçamento entre os itens da lista */
+}
+
+#ss ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.links{
+    color: aquamarine; 
+}

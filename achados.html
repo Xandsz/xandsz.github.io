@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Site Profissional</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>...</h1>
+    </header>
+    <nav id="ss">
+      <ul>
+        <li><a href="index.html">Sobre Mim</a></li>
+        <li><a href="#">Meus Achados!</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    <section>
+        <h1>GANHANDO UMA GRADE DE REDBULL EM ALGUNS MINUTOS!</h1>
+        <p id="fala">Estava cansado de caçar na HackerOne e decidi me aventurar na Intigriti, escolhi o programa da REDBULL. O programa deles é um pouco diferente dos demais programas, eles colocam o escopo em uma lista no GitHub! <a href="https://gist.github.com/RedBullSecurity/3eb88debcb01759eccf65ec2b799b340" target="_blank">redbul.list</a>. Fui até meu alvo <span class="links">http://alvo.com</span> e observei o Wappalyzer, não achei nada muito interessante.</p> 
+    
+        <img src="./files/1.png" width="300px" height="350px"><br>
+        <p id="fala">O site era apenas uma página com um GIF na tela. Então, eu abri o código fonte da página e fui observar os <span class="links">'arquivos javascripts'</span> para tentar encontrar algum endpoint interessante. Foi aí que encontrei isso aqui:<br><img src="./files/2.png" alt=""><BR>Um possível parâmetro via GET. Observando isso, corri para a URL e coloquei isso como parâmetro <span class="links">'https://alvo.com/link?url=/////////evil.com'</span> para tentar pegar um Open Redirect, mas nada aconteceu...</p>
+    
+        <p id="fala"> TENTANDO SSRF: <br>Já que não consegui um Open Redirect, pensei em tentar um SSRF, corri para o <br> <span class="links">'https://webhook.site/'</span>. Esse é um site para você testar interações HTTP. Preparei a carga <br> <span class="links">'https://alvo.com/link?url=https://webhook.site/seuid'</span> e recebi uma interação HTTP no meu webhook.<br><img src="./files/3.png" alt=""> <BR></BR>Tentei alguns payloads para SSRF, testei as seguintes cargas:<br><span class="links">'http://169.254.169.254/latest/meta-data/iam/security-credentials'</span> <br><span class="links">'http://[::ⓕⓕⓕⓕ:①⑥⑨。②⑤④。⑯⑨。②⑤④]:80'</span><br><span class="links">'file:///C:/Windows/win.ini'</span>. <BR></BR>Eu também tentei um bypass via Redirect, subindo um arquivo .php no meu servidor local (se quiser saber mais <a href="https://sirleeroyjenkins.medium.com/just-gopher-it-escalating-a-blind-ssrf-to-rce-for-15k-f5329a974530" target="_blank">clique aqui</a>), mas sempre que eu colocava alguma URL, aparecia um erro na tela!... Fui olhar o DOM da página e percebi que o parametro estava caindo em um iframe. <br> <br><img src="./files/4.png" width="750px" height="100px"> Então resolvi usar a seguinte carga <br><span class="links">'https://alvo.com/link?url=javascript:alert(document.cookie)'</span> e consegui um XSS! <img src="./files/5.jpg" width="700px" height="300px"> <br><br>A dica que eu quero deixar aqui é: se quer evitar duplicadas, passe para o processo manual!<br><span class="links">Esse report foi aceito e recompensado pela REDBULL!!</span></p>
+            
+    </section>
+    
+ 
+</body>
+</html>
