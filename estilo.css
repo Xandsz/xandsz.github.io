@@ -55,6 +55,7 @@ footer {
 #fala {
   line-height: 1.5; /* Define o espaçamento entre as linhas */
   letter-spacing: 1px; /* Define o espaçamento entre as letras */
+  color: #FFFBD8; /* Altera a cor do texto para branco */
 }
 
 .relo{
